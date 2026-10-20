@@ -1,0 +1,5 @@
+﻿.venv/
+__pycache__/
+*.py[cod]
+data/*20251231.csv
+data/*20230331.csv
