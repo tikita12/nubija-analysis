@@ -18,6 +18,7 @@ import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from quality_checks import audit_quality
 
 plt.rcParams["font.family"] = "Malgun Gothic"
 plt.rcParams["axes.unicode_minus"] = False
@@ -344,6 +345,7 @@ def main() -> None:
     daily_df, hourly_df, rows, valid, missing, first_date, last_date = aggregate_raw_trips(
         raw_path, output_dir
     )
+    quality = audit_quality(raw_path, daily_df, output_dir)
     daily, observed, monthly, weekday, hourly_profile = summarize_2025(
         daily_df, hourly_df, output_dir
     )
@@ -355,6 +357,7 @@ def main() -> None:
 
     print("원본 파일:", raw_path)
     print("전체 원본 행 수:", rows)
+    print("품질 점검 결과:", quality)
     print("유효한 출발 날짜·시간 기록:", valid)
     print("컬럼별 빈 값 수:", missing)
     print("출발 기록 기간:", first_date, "~", last_date)

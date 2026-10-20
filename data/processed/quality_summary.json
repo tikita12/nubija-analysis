@@ -1,0 +1,15 @@
+{
+  "total_rows": 4419063,
+  "invalid_departures": 0,
+  "invalid_arrivals": 0,
+  "arrival_before_departure": 0,
+  "zero_duration": 506,
+  "duration_over_24h": 3195,
+  "exact_duplicate_excess_rows": 0,
+  "exact_duplicate_all_members": 0,
+  "observed_days": 334,
+  "daily_iqr_lower": 717.375,
+  "daily_iqr_upper": 26418.375,
+  "daily_outlier_candidates": 0,
+  "policy": "출발 시점 기준 제공 기록 수를 분석한다. 출발 시각 변환 실패는 집계에서 제외한다. 중복 후보와 반납 시간 이상은 오류 원인이 확인되지 않아 자동 삭제하지 않는다. 0초 및 24시간 초과는 검토 기준이며 서비스 규정에 따른 오류 판정이 아니다. 일별 IQR 후보도 실제 변동일 수 있어 자동 삭제하지 않는다."
+}
